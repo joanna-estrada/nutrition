@@ -4,20 +4,10 @@
 
 h1 {
   color:black;
-  font-family: 'Bungee Shade', cursive;
-  font-size: 150px;
-  /* -webkit-text-stroke: 1px white;
-	-webkit-text-fill-color: black; */
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family: 'Carter One', cursive;
+  font-size: 130px;
+  -webkit-text-stroke: 1px white;
+	-webkit-text-fill-color: black;
 }
 
 .App-header {
@@ -34,15 +24,8 @@ h1 {
   color: white;
 }
 
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

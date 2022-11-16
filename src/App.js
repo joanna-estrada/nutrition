@@ -1,36 +1,31 @@
 import './App.css';
-//import {Routes, Route, useNavigate} from 'react-router-dom';
+//import { Routes, Route, useNavigate } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
-  // const navigate = useNavigate();
-  // const navigateToContacts = () => {
-  //   // 👇️ navigate to /contacts
-  //   navigate('/contacts');
-  // };
+import Home from "./Home";
+import DietFormPage from "./DietFormPage";
+import RecipesPage from "./RecipesPage";
 
-  // const navigateHome = () => {
-  //   // 👇️ navigate to /
-  //   navigate('/');
-  // };
-
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Nutrution App</h1>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={styles.app}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dietForm" element={<DietFormPage />} />
+          <Route path="/recipes" element={<RecipesPage />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
+
+const styles = {
+  app: {
+    padding: 50,
+  },
+};
+
