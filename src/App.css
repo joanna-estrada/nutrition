@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+h1 {
+  color:black;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 150px;
+  /* -webkit-text-stroke: 1px white;
+	-webkit-text-fill-color: black; */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +21,10 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("https://s11.favim.com/orig/7/778/7788/77883/soft-green-kiwi-Favim.com-7788350.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
