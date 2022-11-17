@@ -1,3 +1,3 @@
 export default function Title({ text }) {
-  return <h3 id="centered">{text}</h3>;
+  return <header id="centered form-header">{text}</header>;
 }
