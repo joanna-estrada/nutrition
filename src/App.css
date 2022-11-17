@@ -1,31 +1,3 @@
 .App {
   text-align: center;
 }
-
-h1 {
-  color:black;
-  font-family: 'Carter One', cursive;
-  font-size: 130px;
-  -webkit-text-stroke: 1px white;
-	-webkit-text-fill-color: black;
-}
-
-.App-header {
-  background-image: url("https://s11.favim.com/orig/7/778/7788/77883/soft-green-kiwi-Favim.com-7788350.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
