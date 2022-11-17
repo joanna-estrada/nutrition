@@ -36,12 +36,3 @@ p {
 .App-link {
   color: #61dafb;
 }
-
-#centered {
-  text-align: center;
-}
-
-#dietFormGrid {
-  border: green 2px solid;
-  border-radius: 10px;
-}

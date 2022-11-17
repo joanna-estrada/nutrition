@@ -1,21 +1,25 @@
-h1 {
-    font-style: italic;
-    font-size: 100px;
-    background-color: aqua;
-    color: greenyellow;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: italic;
+  font-size: 100px;
+  background-color: aqua;
+  color: greenyellow;
 }
 
 .Home-header {
-    background-image: url("https://s11.favim.com/orig/7/778/7788/77883/soft-green-kiwi-Favim.com-7788350.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-image: url("https://s11.favim.com/orig/7/778/7788/77883/soft-green-kiwi-Favim.com-7788350.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
-
