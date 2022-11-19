@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const DietForm = (props) => {
   const navigate = useNavigate();
   return (
-    <div id="grid-container">
+    <div>
       <Form />
       <button onClick={() => navigate(-1)}>← Go Back</button>
     </div>

@@ -12,7 +12,102 @@ button {
   padding: 10px;
 }
 
-#grid-container {
-  outline: green 5px solid;
-  height: 100vh;
+#header-component {
+  grid-area: header;
+  border: 2px white solid;
+  padding: 2%;
+}
+
+#diet-component {
+  grid-area: diet;
+  border: 2px white solid;
+  padding: 2%;
+}
+#type-component {
+  grid-area: type;
+  border: 2px white solid;
+  padding: 2%;
+}
+
+#cuisine-component {
+  grid-area: cuisine;
+  border: 2px white solid;
+  padding: 2%;
+}
+
+#intolerance-component {
+  grid-area: intolerance;
+  border: 2px white solid;
+  padding: 2%;
+}
+
+/* #max-inputs {
+  grid-area: max;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px white solid;
+  padding: 2%;
+} */
+
+.max { 
+  border: 2px white solid;
+  padding: 2%;
+}
+
+#time {
+  grid-area: time;
+}
+
+#carbs {
+  grid-area: carbs;
+}
+
+#protein {
+  grid-area: protein;
+}
+
+#cal {
+  grid-area: cal;
+}
+
+
+#select {
+  grid-area: select;
+  border: 2px white solid;
+  padding: 2%;
+}
+
+#grid-form {
+  display: grid;
+  grid-template-areas:
+    'header header header header'
+    'select select select select'
+    'diet type cuisine intolerance'
+    'time carbs protein cal';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.centered {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Carter One", sans-serif;
+}
+
+.subpage-title {
+  font-size: 35px;
+}
+
+.number-label {
+  font-family: "Carter One", sans-serif;
+  font-size: 20px;
+}
+
+.input-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
 }

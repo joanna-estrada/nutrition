@@ -1,3 +1,3 @@
 export default function Title({ text }) {
-  return <header id="centered form-header">{text}</header>;
+  return <header className="centered subpage-title">{text}</header>;
 }
