@@ -6,7 +6,6 @@ const Home = (props) => {
   const navigate = useNavigate();
 
   return (
-    <>
     <div className = "Home">
     <header className="Home-header">
       <h1>Nutrition App</h1>
@@ -29,7 +28,6 @@ const Home = (props) => {
         </a>
       </header>
       </div>
-    </>
   );
 };
 
