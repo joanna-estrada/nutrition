@@ -1,3 +1,4 @@
+import Checkbox from "./Checkbox.js";
 import Title from "./Title.js";
 
 export default function Form({ action }) {
@@ -6,32 +7,20 @@ export default function Form({ action }) {
     <Title id="centeredText" text="Diet Form Page" />
     <form>
       <p id="">Diet</p>
-      <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free"></input>
-      <label for="gluten-free">Gluten Free</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Ketogenic</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Vegetarian</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Lacto-Vegetarian</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Ovovegetarian</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Vegan</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Pescetarian</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Paleo</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Primal</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Low FODMAP</label><br></br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></input>
-      <label for="vehicle1">Whole30</label><br></br>
+      <Checkbox value="gluten-free" label="Gluten Free" />
+      <Checkbox value="ketogenic" label="Ketogenic" />
+      <Checkbox value="vegetarian" label="Vegetarian" />
+      <Checkbox value="lacto-vegetarian" label="Lacto-Vegetarian" />
+      <Checkbox value="ovovegetarian" label="Ovovegetarian" />
+      <Checkbox value="vegan" label="Vegan" />
+      <Checkbox value="pescetarian" label="Pescetarian" />
+      <Checkbox value="paleo" label="Paleo" />
+      <Checkbox value="primal" label="Primal" />
+      <Checkbox value="low-fodmap" label="Low FODMAP" />
+      <Checkbox value="whole-30" label="Whole 30" />
     </form>
     <form>
-      
-      <input id=""></input>
+      <Form group="" name="" label="" />
       <p id="">Type</p>
       <input id=""></input>
       <p id="">Max Ready Time</p>
