@@ -1,4 +1,5 @@
 import Checkbox from "./Checkbox.js";
+import RadioButton from "./RadioButton.js";
 import Title from "./Title.js";
 
 export default function Form({ action }) {
@@ -20,7 +21,10 @@ export default function Form({ action }) {
       <Checkbox value="whole-30" label="Whole 30" />
     </form>
     <form>
-      <Form group="" name="" label="" />
+      <RadioButton group="type" value="main-course" label="Main Course" />
+      <RadioButton group="type" value="main-course" label="Main Course" />
+      <RadioButton group="type" value="main-course" label="Main Course" />
+     
       <p id="">Type</p>
       <input id=""></input>
       <p id="">Max Ready Time</p>
