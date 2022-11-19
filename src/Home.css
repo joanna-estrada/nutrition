@@ -8,12 +8,13 @@ h6 {
   font-size: 100px;
   background-color: aqua;
   color: greenyellow;
+  font-family: "Carter One", cursive;
 }
 
 .Home-header {
   background-image: url("https://s11.favim.com/orig/7/778/7788/77883/soft-green-kiwi-Favim.com-7788350.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 87% 87%;
   background-position: center center;
   min-height: 100vh;
   display: flex;
@@ -22,4 +23,12 @@ h6 {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Home {
+
+}
+
+.App-link {
+  color: #61dafb;
 }

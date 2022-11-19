@@ -9,7 +9,7 @@ import RecipesPage from "./RecipesPage";
 
 const App = () => {
   return (
-    <div style={styles.app}>
+    <div>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,10 +22,4 @@ const App = () => {
 };
 
 export default App;
-
-const styles = {
-  app: {
-    padding: 50,
-  },
-};
 
