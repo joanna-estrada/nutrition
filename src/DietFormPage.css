@@ -14,31 +14,31 @@ button {
 
 #header-component {
   grid-area: header;
-  border: 2px white solid;
+  border: 5px white solid;
   padding: 2%;
 }
 
 #diet-component {
   grid-area: diet;
-  border: 2px white solid;
-  padding: 2%;
+  border: 5px white solid;
+  padding: 5%;
 }
 #type-component {
   grid-area: type;
-  border: 2px white solid;
-  padding: 2%;
+  border: 5px white solid;
+  padding: 5%;
 }
 
 #cuisine-component {
   grid-area: cuisine;
-  border: 2px white solid;
-  padding: 2%;
+  border: 5px white solid;
+  padding: 5%;
 }
 
 #intolerance-component {
   grid-area: intolerance;
-  border: 2px white solid;
-  padding: 2%;
+  border: 5px white solid;
+  padding: 5%;
 }
 
 /* #max-inputs {
@@ -51,12 +51,13 @@ button {
 } */
 
 .max { 
-  border: 2px white solid;
-  padding: 2%;
+  border: 5px white solid;
+  padding: 5%;
 }
 
 #time {
   grid-area: time;
+  border: 5px white solid;
 }
 
 #carbs {
@@ -74,7 +75,7 @@ button {
 
 #select {
   grid-area: select;
-  border: 2px white solid;
+  border: 5px white solid;
   padding: 2%;
 }
 
@@ -85,9 +86,8 @@ button {
     'select select select select'
     'diet type cuisine intolerance'
     'time carbs protein cal';
-  gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+  background-image: linear-gradient(greenyellow, aqua);
+  border: 5px white solid;
 }
 
 .centered {
@@ -109,5 +109,6 @@ button {
 
 .input-text {
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   font-size: 15px;
 }
