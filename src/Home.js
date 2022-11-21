@@ -16,7 +16,7 @@ const Home = (props) => {
       <p>
         <button onClick={() => navigate("/dietForm")}>Go to Diet Form</button>
         <button onClick={() => navigate("/recipes")}>Go to Recipes</button>
-        <button onClick={() => navigate("/recipes")}>Get a Random Recipe</button>
+        <button onClick={() => navigate("/ranRecipes")}>Get a Random Recipe</button>
       </p>
       <a
           className="App-link"
