@@ -41,3 +41,9 @@
     background-image: linear-gradient(greenyellow, aqua);
     height: 100vh;
 }
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
