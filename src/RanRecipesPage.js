@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
-import "./App.css";
+import "./RanRecipesPage.css"
 
 const RanRecipesPage = (props) => {
   const [data, setData] = useState("");
@@ -16,21 +16,32 @@ const RanRecipesPage = (props) => {
 
   const navigate = useNavigate();
   return (
-    <>
-      <h1>Random Recipes Page</h1>
+    <div id="content-container">
+      <header id="rand-recipe-header">Random Recipes Page</header>
       <br />
-      <div className="randContainer">
-        {data?.recipes?.[0]?.title}
-      </div>
-      <div className="randContainer">
-        {data?.recipes?.[1]?.title}
-      </div>
-      <div className="randContainer">
-        {data?.recipes?.[2]?.title}
+      <div id="recipes-container">
+        <div className="rand-container">
+          <header className="randTitle">{data?.recipes?.[0]?.title}</header>
+          <p>{data?.recipes?.[0]?.sourceUrl}</p>
+          <p>{data?.recipes?.[0]?.summary}</p>
+          <button className="info-button">Go to Recipe</button>
+        </div>
+        <div className="rand-container">
+          <header>{data?.recipes?.[1]?.title}</header>
+          <p>{data?.recipes?.[1]?.sourceUrl}</p>
+          <p>{data?.recipes?.[1]?.summary}</p>
+          <button className="info-button">Go to Recipe</button>
+        </div>
+        <div className="rand-container">
+          <header>{data?.recipes?.[2]?.title}</header>
+          <p>{data?.recipes?.[2]?.sourceUrl}</p>
+          <p>{data?.recipes?.[2]?.summary}</p>
+          <button className="info-button">Go to Recipe</button>
+        </div>
       </div>
       <button onClick={() => navigate(-1)}>Go Back</button>
 
-    </>
+    </div>
   );
 };
 
