@@ -39,7 +39,7 @@
 
 #content-container {
     background-image: linear-gradient(greenyellow, aqua);
-    height: 100vh;
+    height: max-content;
 }
 
 p {
@@ -52,4 +52,9 @@ subtitle {
   font-size: 18px;
   font-family: "Carter One";
   color: #353839;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
 }
