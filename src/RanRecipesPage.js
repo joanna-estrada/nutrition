@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
 import "./RanRecipesPage.css"
-import NutritionLabel from "./NutritionLabel";
 
 const RanRecipesPage = (props) => {
   const [data, setData] = useState("");
