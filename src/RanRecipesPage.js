@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
 import "./RanRecipesPage.css"
+import NutritionLabel from "./NutritionLabel";
 
 const RanRecipesPage = (props) => {
   const [data, setData] = useState("");
@@ -32,6 +33,8 @@ const RanRecipesPage = (props) => {
           <p>{data?.recipes?.[0]?.servings}</p>
           <subtitle>Ready In</subtitle>
           <p>{data?.recipes?.[0]?.readyInMinutes} minutes</p>
+          <subtitle>Nutrition Label</subtitle>
+          <img src={`https://api.spoonacular.com/recipes/${data?.recipes?.[0]?.id}/nutritionLabel.png?apiKey=43dd31b79bdb404eacf941c2cdf9e291`}></img>
           <button onClick={data?.recipes?.[0]?.sourceUrl} className="info-button">Go to Recipe</button>
         </div>
         <div className="rand-container">
@@ -43,6 +46,8 @@ const RanRecipesPage = (props) => {
           <p>{data?.recipes?.[1]?.servings}</p>
           <subtitle>Ready In</subtitle>
           <p>{data?.recipes?.[1]?.readyInMinutes} minutes</p>
+          <subtitle>Nutrition Label</subtitle>
+          <img src={`https://api.spoonacular.com/recipes/${data?.recipes?.[1]?.id}/nutritionLabel.png?apiKey=43dd31b79bdb404eacf941c2cdf9e291`}></img>
           <button onClick={data?.recipes?.[1]?.sourceUrl} className="info-button">Go to Recipe</button>
         </div>
         <div className="rand-container">
@@ -54,6 +59,8 @@ const RanRecipesPage = (props) => {
           <p>{data?.recipes?.[2]?.servings}</p>
           <subtitle>Ready In</subtitle>
           <p>{data?.recipes?.[2]?.readyInMinutes} minutes</p>
+          <subtitle>Nutrition Label</subtitle>
+          <img src={`https://api.spoonacular.com/recipes/${data?.recipes?.[2]?.id}/nutritionLabel.png?apiKey=43dd31b79bdb404eacf941c2cdf9e291`}></img>
           <button onClick={data?.recipes?.[2]?.sourceUrl} className="info-button">Go to Recipe</button>
         </div>
       </div>
