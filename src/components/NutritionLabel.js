@@ -1,6 +1,5 @@
-export default function NutritionLabel(id) {
-    let nutritionLabelPart = ["https://api.spoonacular.com/recipes/", id, "/nutritionLabel.png"]
+export default function NutritionLabel({ recipeId }) {
   return (
-    <img src={nutritionLabelPart}></img>
+    <img src={`https://api.spoonacular.com/recipes/${recipeId}/nutritionLabel.png?apiKey=43dd31b79bdb404eacf941c2cdf9e291`}></img>
   );
 }

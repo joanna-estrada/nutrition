@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
 import "./RanRecipesPage.css"
-import NavigationButton from "./components/NavigationButton";
 
 const RanRecipesPage = (props) => {
   const [data, setData] = useState("");
@@ -72,7 +71,7 @@ const RanRecipesPage = (props) => {
           
         </div>
       </div>
-      <NavigationButton />
+      <button onClick={() => navigate(-1)}>Go Back</button>
     </div>
   );
 };
