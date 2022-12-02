@@ -41,15 +41,6 @@ button {
   padding: 5%;
 }
 
-/* #max-inputs {
-  grid-area: max;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: 2px white solid;
-  padding: 2%;
-} */
-
 .max { 
   border: 5px white solid;
   padding: 5%;
@@ -75,7 +66,7 @@ button {
 
 #select {
   grid-area: select;
-  border: 5px white solid;
+  /* border: 5px white solid; */
   padding: 2%;
 }
 
@@ -102,7 +93,8 @@ button {
   font-size: 35px;
 }
 
-.number-label {
+.number-label,
+.text-label {
   font-family: "Carter One", sans-serif;
   font-size: 20px;
 }

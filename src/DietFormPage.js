@@ -1,14 +1,13 @@
 import React from "react";
 import "./DietFormPage.css";
 import Form from "./Form.js";
-import { useNavigate } from "react-router-dom";
+import NavigationButton from "./components/NavigationButton";
 
 const DietForm = (props) => {
-  const navigate = useNavigate();
   return (
     <div>
       <Form />
-      <button onClick={() => navigate(-1)}>← Go Back</button>
+      <NavigationButton />
     </div>
   );
 };

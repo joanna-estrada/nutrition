@@ -1,7 +1,7 @@
-import Checkbox from "./Checkbox.js";
-import RadioButton from "./RadioButton.js";
-import NumberInput from "./NumberInput.js"
-import Title from "./Title.js";
+import Checkbox from "./components/Checkbox.js";
+import RadioButton from "./components/RadioButton.js";
+import NumberInput from "./components/NumberInput.js"
+import Title from "./components/Title.js";
 import './DietFormPage.css';
 
 
@@ -16,6 +16,10 @@ export default function Form({ action }) {
         <RadioButton group="form-type" value="text-search" label="Text Search" />
         <RadioButton group="form-type" value="form" label="Diet Form" />
       </div>
+      {/* <div>
+        <p className="centered">Text Search</p>
+        <TextInput name="text-search" display="Search"/>
+      </div> */}
       <div id="diet-component">
         <p className="centered">Diet</p>
         <Checkbox value="gluten-free" label="Gluten Free" />
