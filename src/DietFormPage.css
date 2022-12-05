@@ -64,10 +64,12 @@ button {
 }
 
 
-#select {
+#text-search {
   grid-area: select;
-  /* border: 5px white solid; */
-  padding: 2%;
+  border: 5px white solid;
+  text-align: center;
+  padding: 20px;
+  padding-top: 10px;
 }
 
 #grid-form {
@@ -103,4 +105,13 @@ button {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 15px;
+}
+
+.nav-button,
+button {
+  border-radius: 5px;
+  font-family: "Carter One", sans-serif;
+  color: aquamarine;
+  background: black;
+  margin: 10px;
 }

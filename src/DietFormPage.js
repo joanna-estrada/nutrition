@@ -7,7 +7,7 @@ const DietForm = (props) => {
   return (
     <div>
       <Form />
-      <NavigationButton />
+      <NavigationButton className="nav-button"/>
     </div>
   );
 };

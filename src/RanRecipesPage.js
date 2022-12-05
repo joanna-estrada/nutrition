@@ -68,7 +68,6 @@ const RanRecipesPage = (props) => {
           <p>{data?.recipes?.[2]?.readyInMinutes} minutes</p>
           <subtitle>Nutrition Label</subtitle>
           <img src={`https://api.spoonacular.com/recipes/${data?.recipes?.[2]?.id}/nutritionLabel.png?apiKey=43dd31b79bdb404eacf941c2cdf9e291`}></img>
-          
         </div>
       </div>
       <button onClick={() => navigate(-1)}>Go Back</button>

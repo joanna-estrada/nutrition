@@ -2,6 +2,7 @@ import Checkbox from "./components/Checkbox.js";
 import RadioButton from "./components/RadioButton.js";
 import NumberInput from "./components/NumberInput.js"
 import Title from "./components/Title.js";
+import TextField from "./components/TextField.js";
 import './DietFormPage.css';
 
 
@@ -10,16 +11,12 @@ export default function Form({ action }) {
     <form id="grid-form">
       <div id="header-component">
         <Title id="centeredText" text="Diet Form Page" />
+        <p className="centered">Please click on one or more fields below to specify dietary preferences before clicking the "New Search" button.</p>
       </div>
-      <div id="select">
-        <p className="centered">Please Pick a Form Type to Proceed</p>
-        <RadioButton group="form-type" value="text-search" label="Text Search" />
-        <RadioButton group="form-type" value="form" label="Diet Form" />
+      <div id="text-search">
+        <p className="centered">General Text Search</p>
+        <TextField />
       </div>
-      {/* <div>
-        <p className="centered">Text Search</p>
-        <TextInput name="text-search" display="Search"/>
-      </div> */}
       <div id="diet-component">
         <p className="centered">Diet</p>
         <Checkbox value="gluten-free" label="Gluten Free" />
