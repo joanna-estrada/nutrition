@@ -113,5 +113,11 @@ button {
   font-family: "Carter One", sans-serif;
   color: aquamarine;
   background: black;
-  margin: 10px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  padding-left: 22%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 22%;
 }
