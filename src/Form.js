@@ -4,106 +4,67 @@ import NumberInput from "./components/NumberInput.js"
 import Title from "./components/Title.js";
 import TextField from "./components/TextField.js";
 import './DietFormPage.css';
-
+import { useState } from "react";
 
 export default function Form({ action }) {
+  const [calories, setCalories] = useState(200);
+  const [readyTime, setReadyTime] = useState(200);
+  const [carbs, setCarbs] = useState(200);
+  const [text, setText] = useState("");
+  const [protein, setProtein] = useState(200);
+  const [data, setData] = useState(null);
+  
+  function submit(e) {
+    e.preventDefault();
+    const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=43dd31b79bdb404eacf941c2cdf9e291&maxCalories=${calories}&titleMatch=${text}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
+    console.log(url);
+    fetch(url)
+      .then((r) => r.json())
+      .then((r) => setData(r))
+      .catch((e) => setData(e));
+  }
+
   return (
+    <div>
     <form id="grid-form">
       <div id="header-component">
         <Title id="centeredText" text="Diet Form Page" />
-        <p className="centered">Please click on one or more fields below to specify dietary preferences before clicking the "New Search" button.</p>
+        <p className="centered">Please enter all fields below to find recipes.</p>
       </div>
       <div id="text-search">
         <p className="centered">General Text Search</p>
-        <TextField />
-      </div>
-      <div id="diet-component">
-        <p className="centered">Diet</p>
-        <Checkbox value="gluten-free" label="Gluten Free" />
-        <Checkbox value="ketogenic" label="Ketogenic" />
-        <Checkbox value="vegetarian" label="Vegetarian" />
-        <Checkbox value="lacto-vegetarian" label="Lacto-Vegetarian" />
-        <Checkbox value="ovovegetarian" label="Ovovegetarian" />
-        <Checkbox value="vegan" label="Vegan" />
-        <Checkbox value="pescetarian" label="Pescetarian" />
-        <Checkbox value="paleo" label="Paleo" />
-        <Checkbox value="primal" label="Primal" />
-        <Checkbox value="low-fodmap" label="Low FODMAP" />
-        <Checkbox value="whole-30" label="Whole 30" />
-      </div>
-      <div id="type-component">
-        <p className="centered">Type</p>
-        <RadioButton group="type" value="main-course" label="Main Course" />
-        <RadioButton group="type" value="side-dish" label="Side Dish" />
-        <RadioButton group="type" value="dessert" label="Dessert" />
-        <RadioButton group="type" value="appetizer" label="Appetizer" />
-        <RadioButton group="type" value="salad" label="Salad" />
-        <RadioButton group="type" value="bread" label="Bread" />
-        <RadioButton group="type" value="breakfast" label="Breakfast" />
-        <RadioButton group="type" value="soup" label="Soup" />
-        <RadioButton group="type" value="beverage" label="Beverage" />
-        <RadioButton group="type" value="sauce" label="Sauce" />
-        <RadioButton group="type" value="marinade" label="Marinade" />
-        <RadioButton group="type" value="finger-food" label="Fingerfood" />
-        <RadioButton group="type" value="snack" label="Snack" />
-        <RadioButton group="type" value="drink" label="Drink" />
-      </div>
-      <div id="cuisine-component">
-        <p className="centered">Cuisine</p>
-        <Checkbox value="african" label="African" />
-        <Checkbox value="american" label="American" />
-        <Checkbox value="british" label="British" />
-        <Checkbox value="cajun" label="Cajun" />
-        <Checkbox value="caribbean" label="Caribbean" />
-        <Checkbox value="chinese" label="Chinese" />
-        <Checkbox value="eastern-european" label="Eastern-European" />
-        <Checkbox value="european" label="European" />
-        <Checkbox value="french" label="French" />
-        <Checkbox value="german" label="German" />
-        <Checkbox value="greek" label="Greek" />
-        <Checkbox value="indian" label="Indian" />
-        <Checkbox value="irish" label="Irish" />
-        <Checkbox value="italian" label="Italian" />
-        <Checkbox value="japanese" label="Japanese" />
-        <Checkbox value="jewish" label="Jewish" />
-        <Checkbox value="korean" label="Korean" />
-        <Checkbox value="latin-american" label="Latin-American" />
-        <Checkbox value="mediterranean" label="Mediterranean" />
-        <Checkbox value="mexican" label="Mexican" />
-        <Checkbox value="middle-eastern" label="Middle-Eastern" />
-        <Checkbox value="nordic" label="Nordic" />
-        <Checkbox value="southern" label="Southern" />
-        <Checkbox value="spanish" label="Spanish" />
-        <Checkbox value="thai" label="Thai" />
-        <Checkbox value="vietnamese" label="Vietnamese" />
-      </div>
-      <div id="intolerance-component">
-        <p className="centered">Intolerances</p>
-        <Checkbox value="dairy" label="Dairy" />
-        <Checkbox value="eggs" label="Eggs" />
-        <Checkbox value="gluten" label="Gluten" />
-        <Checkbox value="grain" label="Grain" />
-        <Checkbox value="peanut" label="Peanut" />
-        <Checkbox value="seafood" label="Seafood" />
-        <Checkbox value="sesame" label="Sesame" />
-        <Checkbox value="shellfish" label="Shellfish" />
-        <Checkbox value="soy" label="Soy" />
-        <Checkbox value="sulfite" label="Sulfite" />
-        <Checkbox value="tree-nut" label="Tree Nut" />
-        <Checkbox value="wheat" label="Wheat" />
+        <input type="text" onChange={(e) => setText(e.target.value)} />
+        {text}
       </div>
       <div className="max" id="time">
-        <NumberInput name="max-ready-time" display="Max Ready Time (Minutes)"/>
+        <label>Max Ready Time</label>
+        <br/>
+        <input type="number" onChange={(e) => setReadyTime(e.target.value)} />
+        {readyTime}
       </div>
       <div className="max" id="carbs">
-        <NumberInput name="max-carbs" display="Max Carbs (Grams)"/>
+        <label>Max Carbohydrates</label>
+        <br/>
+        <input type="number" onChange={(e) => setCarbs(e.target.value)} />
+        {carbs}
       </div>
       <div className="max" id="protein">
-        <NumberInput name="max-protein" display="Max Protein (Grams)"/>
+        <label>Max Protein</label>
+        <br/>
+        <input type="number" onChange={(e) => setProtein(e.target.value)} />
+        {protein}
       </div>
       <div className="max" id="cal">
-        <NumberInput name="max-calories" display="Max Calories (Grams)"/>
+        <label>Max Calories</label>
+        <br/>
+        <input type="number" onChange={(e) => setCalories(e.target.value)} />
+        {calories}
       </div>
     </form>
+    <button onClick={submit}>Submit Form</button>
+    <div>
+      {/* Where the results go. */}
+    </div>
+    </div>
   );
 }
