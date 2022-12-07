@@ -5,10 +5,10 @@ import Title from "./components/Title.js";
 import TextField from "./components/TextField.js";
 import './DietFormPage.css';
 import { useState } from "react";
-import RecipeCard from "./components/RecipeCard.js";
+import RecipeProcessor from "./components/RecipeProcessor.js";
 
 export default function Form({ action }) {
-  const max = Number.MAX_SAFE_INTEGER;
+  const max = 1000000000;
   const [calories, setCalories] = useState(max);
   const [readyTime, setReadyTime] = useState(max);
   const [carbs, setCarbs] = useState(max);
@@ -18,9 +18,11 @@ export default function Form({ action }) {
   
   function displayRecipes() {
     if(data !== null) {
-      {data.recipes.map(recipe => {
-        return <RecipeCard recipeId={recipe.Id} />
-      })}
+      console.log("Worked");
+      console.log(data?.results?.[0].title);
+      // {data.recipes?.[0].map(recipe => {
+      //   return <RecipeProcessor recipeId={recipe.Id}/>
+      // })}
     }
   }
 
@@ -38,6 +40,24 @@ export default function Form({ action }) {
       .then((r) => r.json())
       .then((r) => setData(r))
       .catch((e) => setData(e));
+
+    // console.log(data?.results);
+
+    // if(data !== null) {
+    //   console.log("Worked");
+    //   console.log(data?.results?.[0].title);
+    //   console.log(data?.results?.[0].id);
+    //   console.log(data?.results);
+    //   console.log(data?.results?.[0]);
+    //   // {data.recipes?.[0].map(recipe => {
+    //   //   return <RecipeProcessor recipeId={recipe.Id}/>
+    //   // })}
+    // }
+  }
+
+  function handleChange(e) {
+    submit(e);
+    displayRecipes(e);
   }
 
   return (
@@ -78,7 +98,7 @@ export default function Form({ action }) {
       </div>
     </form>
     <button onClick={submit}>Submit Form</button>
-    {displayRecipes}
+    {data?.results && <RecipeProcessor data={data?.results} />}
     </div>
   );
 }
