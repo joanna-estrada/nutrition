@@ -5,18 +5,34 @@ import Title from "./components/Title.js";
 import TextField from "./components/TextField.js";
 import './DietFormPage.css';
 import { useState } from "react";
+import RecipeCard from "./components/RecipeCard.js";
 
 export default function Form({ action }) {
-  const [calories, setCalories] = useState(200);
-  const [readyTime, setReadyTime] = useState(200);
-  const [carbs, setCarbs] = useState(200);
+  const max = Number.MAX_SAFE_INTEGER;
+  const [calories, setCalories] = useState(max);
+  const [readyTime, setReadyTime] = useState(max);
+  const [carbs, setCarbs] = useState(max);
   const [text, setText] = useState("");
-  const [protein, setProtein] = useState(200);
+  const [protein, setProtein] = useState(max);
   const [data, setData] = useState(null);
   
+  function displayRecipes() {
+    if(data !== null) {
+      {data.recipes.map(recipe => {
+        return <RecipeCard recipeId={recipe.Id} />
+      })}
+    }
+  }
+
   function submit(e) {
     e.preventDefault();
-    const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=43dd31b79bdb404eacf941c2cdf9e291&maxCalories=${calories}&titleMatch=${text}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
+    let url = "";
+    if(text !== "") {
+      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=43dd31b79bdb404eacf941c2cdf9e291&maxCalories=${calories}&titleMatch=${text}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
+    } else {
+      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=43dd31b79bdb404eacf941c2cdf9e291&maxCalories=${calories}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
+    }
+
     console.log(url);
     fetch(url)
       .then((r) => r.json())
@@ -29,7 +45,7 @@ export default function Form({ action }) {
     <form id="grid-form">
       <div id="header-component">
         <Title id="centeredText" text="Diet Form Page" />
-        <p className="centered">Please enter all fields below to find recipes.</p>
+        <p className="centered">Please enter some fields below to find recipes.</p>
       </div>
       <div id="text-search">
         <p className="centered">General Text Search</p>
@@ -62,9 +78,7 @@ export default function Form({ action }) {
       </div>
     </form>
     <button onClick={submit}>Submit Form</button>
-    <div>
-      {/* Where the results go. */}
-    </div>
+    {displayRecipes}
     </div>
   );
 }
