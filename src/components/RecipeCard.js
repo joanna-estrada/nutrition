@@ -5,7 +5,7 @@ export default function RecipeCard({ recipeId }) {
   const [mealData, setMealData] = useState("");
 
   useEffect(() => {
-    const url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`
+    const url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`
     console.log(url);
     fetch(url)
       .then((r) => r.json())

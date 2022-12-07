@@ -30,9 +30,9 @@ export default function Form({ action }) {
     e.preventDefault();
     let url = "";
     if(text !== "") {
-      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=43dd31b79bdb404eacf941c2cdf9e291&maxCalories=${calories}&titleMatch=${text}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
+      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=a54ce35c9f574393bbadc18f06529cf4&maxCalories=${calories}&titleMatch=${text}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
     } else {
-      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=43dd31b79bdb404eacf941c2cdf9e291&maxCalories=${calories}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
+      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=a54ce35c9f574393bbadc18f06529cf4&maxCalories=${calories}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
     }
 
     console.log(url);
