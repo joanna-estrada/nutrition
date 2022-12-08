@@ -48,26 +48,80 @@ export default function RecipeProcessor({ data }) {
       .catch((e) => setFifthRecipeData(e));
   }, []);
 
-
-
   return (
-    <div className="recipe-card">
-      <subtitle>{data?.[0]?.title}</subtitle>
-      <img src={data?.[0]?.image}></img>
-      <br/>
-      <subtitle>Summary</subtitle>
-      <br/>
-      {firstRecipeData.summary}
-      <br/>
-      <subtitle>Servings</subtitle>
-      <br/>
-      {firstRecipeData.servings}
-      <br/>
-      <subtitle>Ready In</subtitle>
-      <br/>
-      {firstRecipeData.readyInMinutes}
+    <div className="recipe-generator">
+      <div id="recipe1">
+        <subtitle>{firstRecipe.title}</subtitle>
+        <img src={firstRecipe.image}></img>
+        <br/>
+        <subtitle>Summary</subtitle>
+        <br/>
+        <p dangerouslySetInnerHTML={{__html : firstRecipeData.summary}}/>
+        <br/>
+        <subtitle>Servings</subtitle>
+        <br/>
+        <p>{firstRecipeData.servings}</p>
+        <br/>
+        <subtitle>Ready In</subtitle>
+        <br/>
+        <p>{firstRecipeData.readyInMinutes} minutes</p>
+      </div>
 
-      {/* <div>
+      <div id="recipe2">
+        <subtitle>{secondRecipe.title}</subtitle>
+        <img src={secondRecipe.image}></img>
+        <br/>
+        <subtitle>Summary</subtitle>
+        <br/>
+        <p dangerouslySetInnerHTML={{__html : secondRecipeData.summary}}/>
+        <br/>
+        <subtitle>Servings</subtitle>
+        <br/>
+        <p>{secondRecipeData.servings}</p>
+        <br/>
+        <subtitle>Ready In</subtitle>
+        <br/>
+        <p>{secondRecipeData.readyInMinutes} minutes</p>
+      </div>
+
+      <div id="recipe3">
+        <subtitle>{thirdRecipe.title}</subtitle>
+        <img src={thirdRecipe.image}></img>
+        <br/>
+        <subtitle>Summary</subtitle>
+        <br/>
+        <p dangerouslySetInnerHTML={{__html : thirdRecipeData.summary}}/>
+        <br/>
+        <subtitle>Servings</subtitle>
+        <br/>
+        <p>{thirdRecipeData.servings}</p>
+        <br/>
+        <subtitle>Ready In</subtitle>
+        <br/>
+        <p>{thirdRecipeData.readyInMinutes} minutes</p>
+      </div>
+      
+      <div id="recipe4">
+        <subtitle>{fourthRecipe.title}</subtitle>
+        <img src={fourthRecipe.image}></img>
+        <br/>
+        <subtitle>Summary</subtitle>
+        <br/>
+        <p dangerouslySetInnerHTML={{__html : fourthRecipeData.summary}}/>
+        <br/>
+        <subtitle>Servings</subtitle>
+        <br/>
+        <p>{fourthRecipeData.servings}</p>
+        <br/>
+        <subtitle>Ready In</subtitle>
+        <br/>
+        <p>{fourthRecipeData.readyInMinutes} minutes</p>
+      </div>
+    </div>
+  );
+}
+
+{/* <div>
         {data}
       </div> */}
       {/* <div>
@@ -76,6 +130,3 @@ export default function RecipeProcessor({ data }) {
           return <RecipeCard recipeId={data.Id} />
         })}
       </div> */}
-    </div>
-  );
-}

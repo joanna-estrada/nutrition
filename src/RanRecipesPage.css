@@ -18,7 +18,8 @@
     width: 30vw;
 }
 
-#recipes-container {
+#recipes-container,
+#recipe-generator {
     display: flex;
 }
 
@@ -76,4 +77,6 @@ img {
 .recipe-card {
     border-radius: 5px;
     border: 2px solid blue;
+    padding: 35px;
+    margin: 35px;
 }

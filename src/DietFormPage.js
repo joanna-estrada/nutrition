@@ -9,7 +9,6 @@ const DietForm = (props) => {
     <div>
       <Form />
       <NavigationButton className="nav-button"/>
-      <SearchButton className="search-button" />
     </div>
   );
 };

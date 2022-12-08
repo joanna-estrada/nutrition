@@ -96,8 +96,11 @@ export default function Form({ action }) {
         <input type="number" onChange={(e) => setCalories(e.target.value)} />
         {calories}
       </div>
+      <div id="form-button">
+        <button id="submit-button" onClick={submit}>Submit Form</button>
+      </div>
     </form>
-    <button onClick={submit}>Submit Form</button>
+    
     {data?.results && <RecipeProcessor data={data?.results} />}
     </div>
   );
