@@ -13,10 +13,10 @@ const Home = (props) => {
       <hr />
 
       {/* Buttons */}
-      <p>
+      <div id="intro-buttons">
         <button className="nav-button" onClick={() => navigate("/dietForm")}>Go to Diet Form</button>
         <button className="nav-button" onClick={() => navigate("/ranRecipes")}>Get a Random Recipe</button>
-      </p>
+      </div>
       <a
           className="App-link"
           href="https://github.com/joanna-estrada/nutrition"

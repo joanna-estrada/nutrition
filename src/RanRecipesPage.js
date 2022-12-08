@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
 import "./RanRecipesPage.css"
+import NavigationButton from "./components/NavigationButton";
 
 const RanRecipesPage = (props) => {
   const [data, setData] = useState("");
@@ -70,7 +71,7 @@ const RanRecipesPage = (props) => {
           <img src={`https://api.spoonacular.com/recipes/${data?.recipes?.[2]?.id}/nutritionLabel.png?apiKey=43dd31b79bdb404eacf941c2cdf9e291`}></img>
         </div>
       </div>
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <NavigationButton className="nav-button"/>
     </div>
   );
 };

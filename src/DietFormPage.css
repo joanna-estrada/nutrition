@@ -114,12 +114,22 @@ input[type="number"] {
   font-size: 15px;
 }
 
+.nav-button:hover,
+button:hover {
+    background-color: greenyellow;
+    color: black;
+    font-family: "Carter One", sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    transition: all 0.5s ease 0s;
+}
+
 .nav-button,
 button {
-  border-radius: 5px;
   font-family: "Carter One", sans-serif;
-  color: aquamarine;
-  background: black;
+  background-color: aqua;
+  font-size: 15px;
+  color: black;
 }
 
 #form-button {

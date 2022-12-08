@@ -33,3 +33,9 @@ h6 {
 .App-link {
   color: #61dafb;
 }
+
+#intro-buttons {
+  display: flex;
+  width: 25%;
+  justify-content: space-evenly;
+}
