@@ -1,5 +1,4 @@
 import Title from "./components/Title.js";
-import TextField from "./components/TextField.js";
 import './DietFormPage.css';
 import { useState } from "react";
 import RecipeProcessor from "./components/RecipeProcessor.js";
@@ -76,7 +75,6 @@ export default function Form({ action }) {
         <button id="submit-button" onClick={submit}>{submitText}</button>
       </div>
     </form>
-    
     {data?.results && <RecipeProcessor data={data?.results} />}
     </div>
   );

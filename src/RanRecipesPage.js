@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
 import "./RanRecipesPage.css"
 import NavigationButton from "./components/NavigationButton";
@@ -18,7 +17,6 @@ const RanRecipesPage = (props) => {
   const firstRecipeSummary = data?.recipes?.[0]?.summary;
   const secondRecipeSummary = data?.recipes?.[1]?.summary;
   const thirdRecipeSummary = data?.recipes?.[2]?.summary;
-  const navigate = useNavigate();
   return (
     <div id="content-container">
       <header id="rand-recipe-header">Random Recipes Generator</header>

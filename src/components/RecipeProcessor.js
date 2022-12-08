@@ -111,13 +111,3 @@ export default function RecipeProcessor({ data }) {
     </div>
   );
 }
-
-{/* <div>
-        {data}
-      </div> */}
-      {/* <div>
-        {data?.map(data => {
-          console.log(data)
-          return <RecipeCard recipeId={data.Id} />
-        })}
-      </div> */}
