@@ -1,6 +1,3 @@
-import Checkbox from "./components/Checkbox.js";
-import RadioButton from "./components/RadioButton.js";
-import NumberInput from "./components/NumberInput.js"
 import Title from "./components/Title.js";
 import TextField from "./components/TextField.js";
 import './DietFormPage.css';
@@ -8,56 +5,44 @@ import { useState } from "react";
 import RecipeProcessor from "./components/RecipeProcessor.js";
 
 export default function Form({ action }) {
-  const max = 1000000000;
-  const [calories, setCalories] = useState(max);
-  const [readyTime, setReadyTime] = useState(max);
-  const [carbs, setCarbs] = useState(max);
+  const [submitText, setSubmitText] = useState("Submit Search Query");
+  const [calories, setCalories] = useState();
+  const [readyTime, setReadyTime] = useState();
+  const [carbs, setCarbs] = useState();
   const [text, setText] = useState("");
-  const [protein, setProtein] = useState(max);
+  const [protein, setProtein] = useState();
   const [data, setData] = useState(null);
-  
-  function displayRecipes() {
-    if(data !== null) {
-      console.log("Worked");
-      console.log(data?.results?.[0].title);
-      // {data.recipes?.[0].map(recipe => {
-      //   return <RecipeProcessor recipeId={recipe.Id}/>
-      // })}
-    }
-  }
 
   function submit(e) {
     e.preventDefault();
-    let url = "";
-    if(text !== "") {
-      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=a54ce35c9f574393bbadc18f06529cf4&maxCalories=${calories}&titleMatch=${text}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
-    } else {
-      url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=a54ce35c9f574393bbadc18f06529cf4&maxCalories=${calories}&maxReadyTime=${readyTime}&maxCarbs=${carbs}&maxProtein=${protein}`;
+    let defaultUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
+    if(calories > 0 || !isNaN(calories)) {
+      defaultUrl = defaultUrl.concat(`&maxCalories=${calories}`);
+    } 
+    console.log(readyTime)
+    if(readyTime > 0 || !isNaN(readyTime)){
+      defaultUrl = defaultUrl.concat(`&maxReadyTime=${readyTime}`);
     }
 
-    console.log(url);
-    fetch(url)
+    if(carbs > 0 || !isNaN(carbs)){
+      defaultUrl = defaultUrl.concat(`&maxCarbs=${carbs}`);
+    }
+
+    if(protein > 0 || !isNaN(protein)){
+      defaultUrl = defaultUrl.concat(`&maxProtein=${protein}`);
+    }
+
+    if(text.trim.length > 0){
+      defaultUrl = defaultUrl.concat(`&titleMatch=${text}`);
+    }
+
+    console.log(defaultUrl);
+    fetch(defaultUrl)
       .then((r) => r.json())
       .then((r) => setData(r))
       .catch((e) => setData(e));
 
-    // console.log(data?.results);
-
-    // if(data !== null) {
-    //   console.log("Worked");
-    //   console.log(data?.results?.[0].title);
-    //   console.log(data?.results?.[0].id);
-    //   console.log(data?.results);
-    //   console.log(data?.results?.[0]);
-    //   // {data.recipes?.[0].map(recipe => {
-    //   //   return <RecipeProcessor recipeId={recipe.Id}/>
-    //   // })}
-    // }
-  }
-
-  function handleChange(e) {
-    submit(e);
-    displayRecipes(e);
+    setSubmitText("Re-Submit Form With Changes");
   }
 
   return (
@@ -73,31 +58,27 @@ export default function Form({ action }) {
         {text}
       </div>
       <div className="max" id="time">
-        <label>Max Ready Time</label>
-        <br/>
+        <p className="centered">Max Ready Time</p>
         <input type="number" onChange={(e) => setReadyTime(e.target.value)} />
         {readyTime}
       </div>
       <div className="max" id="carbs">
-        <label>Max Carbohydrates</label>
-        <br/>
+        <p className="centered">Max Carbohydrates</p>
         <input type="number" onChange={(e) => setCarbs(e.target.value)} />
         {carbs}
       </div>
       <div className="max" id="protein">
-        <label>Max Protein</label>
-        <br/>
+        <p className="centered">Max Protein</p>
         <input type="number" onChange={(e) => setProtein(e.target.value)} />
         {protein}
       </div>
       <div className="max" id="cal">
-        <label>Max Calories</label>
-        <br/>
+        <p className="centered">Max Calories</p>
         <input type="number" onChange={(e) => setCalories(e.target.value)} />
         {calories}
       </div>
       <div id="form-button">
-        <button id="submit-button" onClick={submit}>Submit Form</button>
+        <button id="submit-button" onClick={submit}>{submitText}</button>
       </div>
     </form>
     

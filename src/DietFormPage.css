@@ -46,6 +46,11 @@ button {
   padding: 5%;
 }
 
+input[type="number"] {
+  display: block;
+  margin: 0 auto;
+}
+
 #time {
   grid-area: time;
   border: 5px white solid;
