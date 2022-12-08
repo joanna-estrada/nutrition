@@ -1,5 +1,4 @@
 import {useState, useEffect} from "react";
-import RecipeCard from "./RecipeCard";
 
 export default function RecipeProcessor({ data }) {
   // console.log(data)

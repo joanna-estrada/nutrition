@@ -55,27 +55,22 @@ export default function Form({ action }) {
       <div id="text-search">
         <p className="centered">General Text Search</p>
         <input type="text" onChange={(e) => setText(e.target.value)} />
-        {text}
       </div>
       <div className="max" id="time">
         <p className="centered">Max Ready Time</p>
         <input type="number" onChange={(e) => setReadyTime(e.target.value)} />
-        {readyTime}
       </div>
       <div className="max" id="carbs">
         <p className="centered">Max Carbohydrates</p>
         <input type="number" onChange={(e) => setCarbs(e.target.value)} />
-        {carbs}
       </div>
       <div className="max" id="protein">
         <p className="centered">Max Protein</p>
         <input type="number" onChange={(e) => setProtein(e.target.value)} />
-        {protein}
       </div>
       <div className="max" id="cal">
         <p className="centered">Max Calories</p>
         <input type="number" onChange={(e) => setCalories(e.target.value)} />
-        {calories}
       </div>
       <div id="form-button">
         <button id="submit-button" onClick={submit}>{submitText}</button>

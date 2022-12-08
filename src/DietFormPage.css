@@ -121,7 +121,6 @@ button:hover {
     font-family: "Carter One", sans-serif;
     font-size: 18px;
     letter-spacing: 0.2px;
-    transition: all 0.5s ease 0s;
 }
 
 .nav-button,
@@ -130,6 +129,7 @@ button {
   background-color: aqua;
   font-size: 15px;
   color: black;
+  transition: all 0.5s ease 0s;
 }
 
 #form-button {
@@ -179,5 +179,10 @@ button {
 
 #recipe1, #recipe2 {
   margin-bottom: 12.5px;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
 }
 
