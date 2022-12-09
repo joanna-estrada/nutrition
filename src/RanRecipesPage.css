@@ -83,4 +83,19 @@ img {
 
 #align-buttons{
     display: flex;
+    justify-content: center;
+}
+
+.action-buttons {
+    background: aqua;
+    width: 100%;
+    border: 5px white solid;
+    font-family: 'Carter One';
+    padding: 10px;
+    margin: 5px;
+    transition: all 0.5s ease 0s;
+}
+
+.action-buttons:hover {
+    background-color: greenyellow;
 }
