@@ -40,6 +40,7 @@ export default function Form() {
     }
 
     if(text.length > 0){
+      // With help from: https://stackoverflow.com/a/1983661
       let moddedText = text.replace(/\s+/g, '-').toLowerCase();
       defaultUrl = defaultUrl.concat(`&titleMatch=${moddedText}`);
     }

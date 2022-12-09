@@ -41,10 +41,10 @@ export default function RecipeProcessor({ data }) {
 
   return (
     <div className="recipe-generator">
-      <Recipe id="recipe1" recipe={firstRecipe} extraRecipeData={firstRecipeData} />
-      <Recipe id="recipe2" recipe={secondRecipe} extraRecipeData={secondRecipeData} />
-      <Recipe id="recipe3" recipe={thirdRecipe} extraRecipeData={thirdRecipeData} />
-      <Recipe id="recipe4" recipe={fourthRecipe} extraRecipeData={fourthRecipeData} />
+      {firstRecipe && <Recipe id="recipe1" recipe={firstRecipe} extraRecipeData={firstRecipeData} />}
+      {secondRecipe && <Recipe id="recipe2" recipe={secondRecipe} extraRecipeData={secondRecipeData} />}
+      {thirdRecipe && <Recipe id="recipe3" recipe={thirdRecipe} extraRecipeData={thirdRecipeData} />}
+      {fourthRecipe && <Recipe id="recipe4" recipe={fourthRecipe} extraRecipeData={fourthRecipeData} />}
     </div>
   );
 }
