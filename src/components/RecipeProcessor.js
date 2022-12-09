@@ -1,22 +1,5 @@
 import {useState, useEffect} from "react";
-import SmallSubtitle from "./SmallSubtitle";
-import Summary from "./Summary";
-import Image from "./Image";
-
-function Recipe({id, recipe, extraRecipeData}) {
-  return(
-    <div id={id}>
-        <SmallSubtitle text={recipe.title} />
-        <Image src={recipe.image} alt="recipe image" />
-        <SmallSubtitle text="Summary" />
-        <Summary recipe={extraRecipeData} />
-        <SmallSubtitle text="Servings" />
-        <p>{extraRecipeData.servings}</p>
-        <SmallSubtitle text="Ready In" />
-        <p>{extraRecipeData.readyInMinutes} minutes</p>
-    </div>
-  );
-}
+import Recipe from "./Recipe";
 
 export default function RecipeProcessor({ data }) {
   const firstRecipe = data?.[0];
