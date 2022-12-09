@@ -1,5 +1,5 @@
 export default function Summary({ recipe }) {
   return (
-    <p dangerouslySetInnerHTML={{__html : recipe.summary}}/>
+    <p dangerouslySetInnerHTML={{__html : recipe?.summary}}/>
   );
 }
