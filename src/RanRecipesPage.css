@@ -80,3 +80,7 @@ img {
     padding: 35px;
     margin: 35px;
 }
+
+#align-buttons{
+    display: flex;
+}
