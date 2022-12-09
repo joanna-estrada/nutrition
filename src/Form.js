@@ -1,9 +1,10 @@
-import Title from "./components/Title.js";
 import './DietFormPage.css';
 import { useState } from "react";
 import RecipeProcessor from "./components/RecipeProcessor.js";
+import Subtitle from "./components/Subtitle.js";
+import Header from "./components/Header.js";
 
-export default function Form({ action }) {
+export default function Form() {
   const [submitText, setSubmitText] = useState("Submit Search Query");
   const [calories, setCalories] = useState();
   const [readyTime, setReadyTime] = useState();
@@ -22,18 +23,21 @@ export default function Form({ action }) {
     if(readyTime > 0 || !isNaN(readyTime)){
       defaultUrl = defaultUrl.concat(`&maxReadyTime=${readyTime}`);
     }
-
+    
     if(carbs > 0 || !isNaN(carbs)){
       defaultUrl = defaultUrl.concat(`&maxCarbs=${carbs}`);
     }
+    console.log(carbs);
+    console.log(carbs > 0 || !isNaN(carbs));
 
     if(protein > 0 || !isNaN(protein)){
       defaultUrl = defaultUrl.concat(`&maxProtein=${protein}`);
     }
 
-    if(text.trim.length > 0){
+    if(text.length > 0){
       defaultUrl = defaultUrl.concat(`&titleMatch=${text}`);
     }
+    console.log(text.length);
 
     console.log(defaultUrl);
     fetch(defaultUrl)
@@ -46,36 +50,69 @@ export default function Form({ action }) {
 
   return (
     <div>
-    <form id="grid-form">
-      <div id="header-component">
-        <Title id="centeredText" text="Diet Form Page" />
-        <p className="centered">Please enter some fields below to find recipes.</p>
-      </div>
-      <div id="text-search">
-        <p className="centered">General Text Search</p>
-        <input type="text" onChange={(e) => setText(e.target.value)} />
-      </div>
-      <div className="max" id="time">
-        <p className="centered">Max Ready Time</p>
-        <input type="number" onChange={(e) => setReadyTime(e.target.value)} />
-      </div>
-      <div className="max" id="carbs">
-        <p className="centered">Max Carbohydrates</p>
-        <input type="number" onChange={(e) => setCarbs(e.target.value)} />
-      </div>
-      <div className="max" id="protein">
-        <p className="centered">Max Protein</p>
-        <input type="number" onChange={(e) => setProtein(e.target.value)} />
-      </div>
-      <div className="max" id="cal">
-        <p className="centered">Max Calories</p>
-        <input type="number" onChange={(e) => setCalories(e.target.value)} />
-      </div>
-      <div id="form-button">
-        <button id="submit-button" onClick={submit}>{submitText}</button>
-      </div>
-    </form>
-    {data?.results && <RecipeProcessor data={data?.results} />}
+      <form id="grid-form">
+        <Header />
+        <TextSearch setText={setText}/>
+        <MaxReadyTime setReadyTime={setReadyTime}/>
+        <MaxCarbs setCarbs={setCarbs} />
+        <MaxProtein setProtein={setProtein} />
+        <MaxCalories setCalories={setCalories} />
+        <SubmitButton submit={submit} submitText={submitText}/>
+      </form>
+      {data?.results && <RecipeProcessor data={data?.results} />}
+    </div>
+  );
+}
+
+function TextSearch({setText}){
+  return(
+  <div id="text-search">
+    <Subtitle text="General Text Search" />
+    <input type="text" onChange={(e) => setText(e.target.value)} />
+  </div>
+  );
+}
+
+function MaxReadyTime({setReadyTime}) {
+  return(
+    <div className="max" id="time">
+      <Subtitle text="Max Ready Time (Minutes)" />
+      <input type="number" onChange={(e) => setReadyTime(e.target.value)} />
+    </div> 
+  );
+}
+
+function MaxCarbs({setCarbs}) {
+  return(
+    <div className="max" id="carbs">
+      <Subtitle text="Max Carbohydrates" />
+      <input type="number" onChange={(e) => setCarbs(e.target.value)} />
+    </div>
+  );
+}
+
+function MaxProtein({setProtein}){
+  return(
+    <div className="max" id="protein">
+      <Subtitle text="Max Protein" />
+      <input type="number" onChange={(e) => setProtein(e.target.value)} />
+    </div>
+  );
+}
+
+function MaxCalories({setCalories}){
+  return(
+    <div className="max" id="cal">
+      <Subtitle text="Max Calories" />
+      <input type="number" onChange={(e) => setCalories(e.target.value)} />
+    </div>
+  );
+}
+
+function SubmitButton({submit, submitText}){
+  return(
+    <div id="form-button">
+      <button id="submit-button" onClick={submit}>{submitText}</button>
     </div>
   );
 }

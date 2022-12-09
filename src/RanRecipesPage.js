@@ -1,6 +1,8 @@
 import {useState, useEffect} from "react";
 import "./RanRecipesPage.css"
 import NavigationButton from "./components/NavigationButton";
+import Subtitle from "./components/Subtitle";
+import Image from "./components/Image"
 
 const RanRecipesPage = (props) => {
   const [data, setData] = useState("");
@@ -23,8 +25,8 @@ const RanRecipesPage = (props) => {
       <br />
       <div id="recipes-container">
         <div className="rand-container">
-          <subtitle>{data?.recipes?.[0]?.title}</subtitle>
-          <img src={data?.recipes?.[0]?.image}></img>
+          <Subtitle text={data?.recipes?.[0]?.title}/>
+          <Image src={data?.recipes?.[0]?.image} />
           <button onClick={data?.recipes?.[0]?.sourceUrl} className="info-button">Go to Recipe</button>
           <button onClick="" className="favorite-button">Save to Favorites</button>
           <subtitle>Summary</subtitle>

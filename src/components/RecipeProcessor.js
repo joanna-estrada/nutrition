@@ -1,7 +1,24 @@
 import {useState, useEffect} from "react";
+import SmallSubtitle from "./SmallSubtitle";
+import Summary from "./Summary";
+import Image from "./Image";
+
+function Recipe({id, recipe, extraRecipeData}) {
+  return(
+    <div id={id}>
+        <SmallSubtitle text={recipe.title} />
+        <Image src={recipe.image} alt="recipe image" />
+        <SmallSubtitle text="Summary" />
+        <Summary recipe={extraRecipeData} />
+        <SmallSubtitle text="Servings" />
+        <p>{extraRecipeData.servings}</p>
+        <SmallSubtitle text="Ready In" />
+        <p>{extraRecipeData.readyInMinutes} minutes</p>
+    </div>
+  );
+}
 
 export default function RecipeProcessor({ data }) {
-  // console.log(data)
   const firstRecipe = data?.[0];
   const secondRecipe = data?.[1];
   const thirdRecipe = data?.[2];
@@ -13,10 +30,10 @@ export default function RecipeProcessor({ data }) {
   const [fourthRecipeData, setFourthRecipeData] = useState("");
 
   useEffect(() => {
-    const firstRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
-    const secondRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[1]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
-    const thirdRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[2]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
-    const fourthRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
+    const firstRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
+    const secondRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[1]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
+    const thirdRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[2]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
+    const fourthRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
 
     fetch(firstRecipeUrl)
       .then((r) => r.json())
@@ -41,73 +58,10 @@ export default function RecipeProcessor({ data }) {
 
   return (
     <div className="recipe-generator">
-      <div id="recipe1">
-        <subtitle>{firstRecipe.title}</subtitle>
-        <img src={firstRecipe.image}></img>
-        <br/>
-        <subtitle>Summary</subtitle>
-        <br/>
-        <p dangerouslySetInnerHTML={{__html : firstRecipeData.summary}}/>
-        <br/>
-        <subtitle>Servings</subtitle>
-        <br/>
-        <p>{firstRecipeData.servings}</p>
-        <br/>
-        <subtitle>Ready In</subtitle>
-        <br/>
-        <p>{firstRecipeData.readyInMinutes} minutes</p>
-      </div>
-
-      <div id="recipe2">
-        <subtitle>{secondRecipe.title}</subtitle>
-        <img src={secondRecipe.image}></img>
-        <br/>
-        <subtitle>Summary</subtitle>
-        <br/>
-        <p dangerouslySetInnerHTML={{__html : secondRecipeData.summary}}/>
-        <br/>
-        <subtitle>Servings</subtitle>
-        <br/>
-        <p>{secondRecipeData.servings}</p>
-        <br/>
-        <subtitle>Ready In</subtitle>
-        <br/>
-        <p>{secondRecipeData.readyInMinutes} minutes</p>
-      </div>
-
-      <div id="recipe3">
-        <subtitle>{thirdRecipe.title}</subtitle>
-        <img src={thirdRecipe.image}></img>
-        <br/>
-        <subtitle>Summary</subtitle>
-        <br/>
-        <p dangerouslySetInnerHTML={{__html : thirdRecipeData.summary}}/>
-        <br/>
-        <subtitle>Servings</subtitle>
-        <br/>
-        <p>{thirdRecipeData.servings}</p>
-        <br/>
-        <subtitle>Ready In</subtitle>
-        <br/>
-        <p>{thirdRecipeData.readyInMinutes} minutes</p>
-      </div>
-      
-      <div id="recipe4">
-        <subtitle>{fourthRecipe.title}</subtitle>
-        <img src={fourthRecipe.image}></img>
-        <br/>
-        <subtitle>Summary</subtitle>
-        <br/>
-        <p dangerouslySetInnerHTML={{__html : fourthRecipeData.summary}}/>
-        <br/>
-        <subtitle>Servings</subtitle>
-        <br/>
-        <p>{fourthRecipeData.servings}</p>
-        <br/>
-        <subtitle>Ready In</subtitle>
-        <br/>
-        <p>{fourthRecipeData.readyInMinutes} minutes</p>
-      </div>
+      <Recipe id="recipe1" recipe={firstRecipe} extraRecipeData={firstRecipeData} />
+      <Recipe id="recipe2" recipe={secondRecipe} extraRecipeData={secondRecipeData} />
+      <Recipe id="recipe3" recipe={thirdRecipe} extraRecipeData={thirdRecipeData} />
+      <Recipe id="recipe4" recipe={fourthRecipe} extraRecipeData={fourthRecipeData} />
     </div>
   );
 }
