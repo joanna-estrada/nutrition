@@ -40,8 +40,10 @@ export default function Form() {
     }
 
     if(text.length > 0){
-      defaultUrl = defaultUrl.concat(`&titleMatch=${text}`);
+      let moddedText = text.replace(/\s+/g, '-').toLowerCase();
+      defaultUrl = defaultUrl.concat(`&titleMatch=${moddedText}`);
     }
+    console.log(text);
     console.log(text.length);
 
     console.log(defaultUrl);
