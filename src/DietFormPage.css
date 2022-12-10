@@ -165,22 +165,6 @@ button {
   font-family: "Montserrat", sans-serif;
 }
 
-#recipe1, #recipe3 {
-  margin-right: 12.5px;
-}
-
-#recipe2, #recipe4 {
-  margin-left: 12.5px;
-}
-
-#recipe3, #recipe4 {
-  margin-top: 12.5px;
-}
-
-#recipe1, #recipe2 {
-  margin-bottom: 12.5px;
-}
-
 input {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
