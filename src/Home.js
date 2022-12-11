@@ -22,6 +22,7 @@ export default function Home = (props) => {
         {!user ? <SignIn /> : <SignOut />}
         <hr />
 
+<<<<<<< HEAD
         {!user ? "" : <DietForm props={props} />}
         {!user ? "" : <RecipesPage props={props} />}
         {!user ? "" : <RanRecipesPage data={props} />}
@@ -36,6 +37,14 @@ export default function Home = (props) => {
           </button>
         </p>
         <a
+=======
+      {/* Buttons */}
+      <div id="intro-buttons">
+        <button className="nav-button" onClick={() => navigate("/dietForm")}>Go to Diet Form</button>
+        <button className="nav-button" onClick={() => navigate("/ranRecipes")}>Get a Random Recipe</button>
+      </div>
+      <a
+>>>>>>> a1bcb7b5a186593ae80a53ebf993bc39d6f5cb64
           className="App-link"
           href="https://github.com/joanna-estrada/nutrition"
           target="_blank"

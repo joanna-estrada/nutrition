@@ -25,9 +25,17 @@ h6 {
   color: white;
 }
 
-.Home {
+.nav-button {
+  border-radius: 5px;
+  color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+#intro-buttons {
+  display: flex;
+  width: 25%;
+  justify-content: space-evenly;
 }

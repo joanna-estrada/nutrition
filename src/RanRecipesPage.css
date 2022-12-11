@@ -18,23 +18,39 @@
     width: 30vw;
 }
 
-#recipes-container {
+#recipes-container,
+#recipe-generator {
     display: flex;
 }
 
-.info-button {
+.info-button:hover,
+.favorite-button:hover {
+    background-color: aqua;
+}
+
+.info-button,
+.favorite-button {
     background-color: greenyellow;
     color: black;
     border-radius: 5px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
+    font-family: "Carter One", sans-serif;
+    font-size: 16px;
     letter-spacing: 0.2px;
+    transition: all 0.3s ease 0s;
 }
 
-.info-button:hover {
-    background-color: aqua;
-    transition-duration: 2ms;
-    transition: all;
+.info-button {
+    width: 49.5%;
+    margin-right: 1%;
+}
+
+.favorite-button {
+    width: 49.5%;
+    margin: 0px;
+}
+
+.warning {
+    color: red;
 }
 
 #content-container {
@@ -44,8 +60,7 @@
 
 p {
     font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 subtitle {
@@ -55,6 +70,32 @@ subtitle {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 5px;
+}
+
+.recipe-card {
+    border-radius: 5px;
+    border: 2px solid blue;
+    padding: 35px;
+    margin: 35px;
+}
+
+#align-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.action-buttons {
+    background: aqua;
+    width: 100%;
+    border: 5px white solid;
+    font-family: 'Carter One';
+    padding: 10px;
+    margin: 5px;
+    transition: all 0.5s ease 0s;
+}
+
+.action-buttons:hover {
+    background-color: greenyellow;
 }
