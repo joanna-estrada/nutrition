@@ -14,7 +14,7 @@
 }
 
 .rand-container {
-    flex-direction: column;
+    flex-direction: row;
     width: 30vw;
 }
 
