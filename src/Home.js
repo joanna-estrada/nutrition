@@ -2,7 +2,6 @@ import "./Home.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import DietForm from "./DietFormPage";
-// import RecipesPage from "./RecipesPage";
 import RanRecipesPage from "./RanRecipesPage";
 import authService, {
   SignIn,
