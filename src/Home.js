@@ -1,5 +1,6 @@
 import "./Home.css";
 import React from "react";
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import DietForm from "./DietFormPage";
 // import RecipesPage from "./RecipesPage";
@@ -16,11 +17,21 @@ export default function Home(props) {
 
   return (
     <div className="Home">
+      <header className="Home-top">
+        Nutrition
+        {user &&
+        <button
+            className="nav-button"
+            onClick={() => navigate("/viewFavorites")}
+          >
+            View Favorites 
+          </button>}
+        {!user ? <SignIn /> : <SignOut />}
+      </header>
+
       <header className="Home-header">
         <h1>Nutrition App</h1>
         <p>Click a button to start!</p>
-        {!user ? <SignIn /> : <SignOut />}
-        <hr />
 
         {/* Buttons */}
         <div id="intro-buttons">
