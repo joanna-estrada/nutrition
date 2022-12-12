@@ -2,13 +2,13 @@ import React from "react";
 import "./DietFormPage.css";
 import Form from "./Form.js";
 import NavigationButton from "./components/NavigationButton";
-import SearchButton from "./components/SearchButton";
+// import SearchButton from "./components/SearchButton";
 
 const DietForm = (props) => {
   return (
     <div>
       <Form />
-      <NavigationButton className="nav-button"/>
+      <NavigationButton className="nav-button" />
     </div>
   );
 };
