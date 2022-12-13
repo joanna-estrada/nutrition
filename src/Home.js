@@ -2,14 +2,8 @@ import "./Home.css";
 import React from "react";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-import DietForm from "./DietFormPage";
-// import RecipesPage from "./RecipesPage";
-import RanRecipesPage from "./RanRecipesPage";
-import authService, {
-  SignIn,
-  SignOut,
-  useAuthentication,
-} from "./services/authService";
+
+import { SignIn, SignOut, useAuthentication } from "./services/authService";
 
 export default function Home(props) {
   const navigate = useNavigate();
