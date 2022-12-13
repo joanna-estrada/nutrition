@@ -7,6 +7,7 @@ import Home from "./Home";
 import DietFormPage from "./DietFormPage";
 // import RecipesPage from "./RecipesPage";
 import RanRecipesPage from "./RanRecipesPage";
+import ViewFavoritesPage from "./ViewFavoritesPage";
 // import authService, {
 //   SignIn,
 //   SignOut,
@@ -22,6 +23,7 @@ const App = () => {
           {/* <Route path="/login" element={<authService />} /> */}
           <Route path="/dietForm" element={<DietFormPage />} />
           <Route path="/ranRecipes" element={<RanRecipesPage />} />
+          <Route path="/viewFavorites" element={<ViewFavoritesPage/>} />
         </Routes>
       </Router>
     </div>
