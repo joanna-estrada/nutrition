@@ -69,11 +69,6 @@ subtitle {
   color: #353839;
 }
 
-img {
-    width: 100%;
-    border-radius: 5px;
-}
-
 .recipe-card {
     border-radius: 5px;
     border: 2px solid blue;
