@@ -13,10 +13,10 @@ export default function RecipeProcessor({ data }) {
   const [fourthRecipeData, setFourthRecipeData] = useState("");
 
   useEffect(() => {
-    const firstRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
-    const secondRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[1]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
-    const thirdRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[2]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
-    const fourthRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
+    const firstRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
+    const secondRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[1]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
+    const thirdRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[2]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
+    const fourthRecipeUrl = `https://api.spoonacular.com/recipes/${data?.[0]?.id}/information?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
 
     fetch(firstRecipeUrl)
       .then((r) => r.json())

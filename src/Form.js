@@ -20,7 +20,7 @@ export default function Form() {
 
   function submit(e) {
     e.preventDefault();
-    let defaultUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=a54ce35c9f574393bbadc18f06529cf4`;
+    let defaultUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=43dd31b79bdb404eacf941c2cdf9e291`;
     if(calories > 0 || !isNaN(calories)) {
       defaultUrl = defaultUrl.concat(`&maxCalories=${calories}`);
     } 

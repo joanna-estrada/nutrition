@@ -7,7 +7,7 @@ const RanRecipesPage = (props) => {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    const url = `https://api.spoonacular.com/recipes/random?apiKey=a54ce35c9f574393bbadc18f06529cf4&number=3`;
+    const url = `https://api.spoonacular.com/recipes/random?apiKey=43dd31b79bdb404eacf941c2cdf9e291&number=3`;
     console.log(url);
     fetch(url)
       .then((r) => r.json())
