@@ -6,7 +6,8 @@ export default function ActionButtons({ recipe }) {
     e.preventDefault();
     setDoc(doc(db, "favoriterecipes", auth.currentUser.uid), {
       name: recipe.title,
-      link: recipe.sourceUrl
+      link: recipe.sourceUrl,
+      instructions: recipe.instructions,
     })
   }
   return (

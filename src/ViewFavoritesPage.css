@@ -1,3 +1,11 @@
-h1{
+h2 {
     font-size: 100px;
+    color: black;
+    font-family: "Carter One", cursive;
+}
+
+#favsPage {
+    border: 1px white solid;
+    border-top: 1px white solid;
+    background-image: linear-gradient(aqua, greenyellow);
 }

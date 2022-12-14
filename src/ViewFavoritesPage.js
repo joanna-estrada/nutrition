@@ -21,13 +21,14 @@ const ViewFavoritesPage = (props) => {
         })
            }, [])
     return (
-        <div>
-            <h1>Hi these are your favs</h1>
-            {auth.currentUser?.displayName}
-            {auth.currentUser?.uid}
-            {favorite?.name??"No favorite yet"}
-            {favorite?.link}
-            <NavigationButton className="nav-button" />
+        <div id="favsPage">
+            <h2>Your Favorite Recipe</h2>
+            <h3>Name: </h3>{favorite?.name??"No favorite yet"}
+            <br/>
+            <h3>Link to recipe: </h3>{favorite?.link}
+            <br/>
+            <h3>Instructions: </h3>{favorite?.instructions}
+            <footer><NavigationButton className="nav-button" /></footer>
         </div>
     );
 };
