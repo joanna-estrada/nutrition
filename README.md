@@ -18,5 +18,8 @@ These endpoints help to display three random recipes and their corresponding nut
 Complex Search Endpoint: https://spoonacular.com/food-api/docs#Search-Recipes-Complex   
 Recipe Information Endpoint: https://spoonacular.com/food-api/docs#Get-Recipe-Information   
 These endpoints help to get recipes based on what the user inputs in the text search and numeric inputs below the textbox. The complex search endpoint returns a recipe id, which is then used in the recipe information endpoint to extract more information about the recipe that wasn't returned from call to the API using the complex search endpoint.
+- React Components with CSS
+- Firebase/Firestore Integration
+- API Integration
 
 You can find our presentation deck here: https://docs.google.com/presentation/d/1OKjHDvR-IH1Q4rMyJoUp8y1dKcgn9KJwZ-iRQirqpaI/edit?usp=sharing
