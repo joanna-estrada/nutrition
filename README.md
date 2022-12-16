@@ -22,4 +22,4 @@ These endpoints help to get recipes based on what the user inputs in the text se
 - Firebase/Firestore Integration
 - API Integration
 
-You can find our presentation deck here: https://docs.google.com/presentation/d/1OKjHDvR-IH1Q4rMyJoUp8y1dKcgn9KJwZ-iRQirqpaI/edit?usp=sharing
+You can find our presentation deck [here](https://docs.google.com/presentation/d/1OKjHDvR-IH1Q4rMyJoUp8y1dKcgn9KJwZ-iRQirqpaI/edit?usp=sharing) and our design doc [here](https://docs.google.com/document/d/1y999yeIMZ7H-77KhnqzrW3QWp808N3sd_RK2tqCTbcg/edit?usp=sharing&resourcekey=0-5jUkOfS-5Q-lkOQfysowxw). 
